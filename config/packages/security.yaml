@@ -31,6 +31,10 @@ security:
             # https://symfony.com/doc/current/security/impersonating_user.html
             switch_user: true
             custom_authenticator: App\Security\SaltoAuthenticator
+            guard:
+                authenticators:
+                    - App\Security\SaltoAuthenticator
+
             logout:
                 path: app_logout
                 # where to redirect after logout
@@ -40,4 +44,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin/login, roles: PUBLIC_ACCESS }
+
         # - { path: ^/profile, roles: ROLE_USER }
