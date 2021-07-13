@@ -1,8 +1,8 @@
 version: '3.5'
 
 services:
-  grace-web:
-    container_name: grace-web
+  salto-web:
+    container_name: salto-web
     build:
       context: ./docker/nginx
       args:
@@ -12,12 +12,12 @@ services:
     volumes:
       - ./public:/appdata/www/public
     depends_on:
-      - grace-be
+      - salto-be
     networks:
-      - grace-network
+      - salto-network
 
-  grace-be:
-    container_name: grace-be
+  salto-be:
+    container_name: salto-be
     build:
       context: docker/php
       args:
@@ -34,8 +34,8 @@ services:
       - ~/.ssh/id_rsa:/home/appuser/.ssh/id_rsa
 
     networks:
-      - grace-network
+      - salto-network
 
 networks:
-  grace-network:
+  salto-network:
     external: true
