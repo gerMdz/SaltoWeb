@@ -155,6 +155,11 @@ fabric.properties
 
 # Assets and user uploads
 /public/uploads/
+/vendor/
+
+# Assets and user uploads
+/web/bundles/
+/web/uploads/
 
 # PHPUnit
 /app/phpunit.xml
