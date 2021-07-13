@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_BE = grace-be
+DOCKER_BE = salto-be
 OS := $(shell uname)
 
 ifeq ($(OS),Darwin)
@@ -18,7 +18,7 @@ help: ## Show this help message
 	@egrep '^(.+)\:\ ##\ (.+)' ${MAKEFILE_LIST} | column -t -c 2 -s ':#'
 
 run: ## Start the containers
-	docker network create vero-network || true
+	docker network create salto-network || true
 	U_ID=${UID} docker-compose up -d
 
 stop: ## Stop the containers
