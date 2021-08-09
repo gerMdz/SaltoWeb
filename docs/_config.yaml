@@ -1,3 +1,12 @@
----
 theme: minima
----
+title: Salto Web - Manager Push Notification
+author: gerMdz
+email: gerardo.montivero@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Creación de un manager para las notificaciones push, basado en php - Symfony - y las notificaciones push que ya existen, solo que está adaptado 
+  a mis otros proyectos
+# social links
+# twitter_username: your-twitter-handle # DO NOT include the @ character, or else the build will fail!
+github_username:  gerMdz # DO NOT include the @ character, or else the build will fail!
+
+show_excerpts: true # set to false to remove excerpts on the homepage
