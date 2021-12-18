@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>{% block title %}Nos encanta que estés aquí!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+            <link rel="stylesheet" href="{{ asset('metro/css/metro-all.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('metro/css/index.css') }}">
         {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+
     </head>
     <body>
         {% block body %}{% endblock %}
     </body>
+    {% block javascripts %}
+        {#{{ encore_entry_script_tags('app') }}#}
+        <script src="{{ asset('metro/vendors/jquery/jquery-3.4.1.min.js') }}"></script>
+        <script src="{{ asset('metro/js/metro.min.js') }}"></script>
+    {% endblock %}
 </html>

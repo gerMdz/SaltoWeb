@@ -11,6 +11,7 @@
         "doctrine/doctrine-bundle": "^2.4",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.9",
+        "minishlink/web-push-bundle": "^6.0",
         "sensio/framework-extra-bundle": "^6.1",
         "symfony/asset": "5.3.*",
         "symfony/console": "5.3.*",

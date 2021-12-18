@@ -1,42 +1,82 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Ingreso{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <div class="m4-cloak h-vh-100 d-flex flex-justify-center flex-align-center">
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        <div class="login-box">
+            <form method="post" class="bg-white p-4"
+{#                  action="javascript:"#}
+                  data-role="validator"
+                  data-clear-invalid="2000"
+                  data-on-error-form="invalidForm"
+            >
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        Usted ha ingreso como {{ app.user.userIdentifier }}, <a
+                                href="{{ path('app_logout') }}">Salir</a>
+                    </div>
+                {% endif %}
+                <h3 class="mb-0">Login</h3>
+                <div class="text-muted mb-4">Ingrese sus credenciales para iniciar sesión</div>
+{#                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email"
+                           value="{{ last_username }}" name="email" id="inputEmail"
+                           autocomplete="email" required autofocus
+                           data-role="input" placeholder="Email" data-append="<span class='mif-envelop'>" data-validate="required">
+                    <span class="invalid_feedback">Por favor ingrese un email válido</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword">Clave</label>
+                    <input type="password" data-role="input" placeholder="Clave"
+                           name="password" id="inputPassword"
+                           data-append="<span class='mif-key'>" data-validate="required"
+                           autocomplete="current-password" required>
+                    <span class="invalid_feedback">Por favor ingrese su clave</span>
+                </div>
+
+
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+
+                {#
+                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                See https://symfony.com/doc/current/security/remember_me.html
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
+                </div>
+                #}
+
+                <div class="form-group d-flex flex-align-center flex-justify-between">
+{#                    <input type="checkbox" data-role="checkbox" data-caption="Remember Me">#}
+                    <button class="button primary" type="submit">Ingresar</button>
+                </div>
+
+            </form>
         </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+    </div>
+    {% block javascripts %}
+        {{ parent() }}
+        <script>
+            function invalidForm(){
+                const form = $(this);
+                form.addClass("ani-ring");
+                setTimeout(function(){
+                    form.removeClass("ani-ring");
+                }, 1000);
+            }
+        </script>
+        {% endblock %}
 {% endblock %}
