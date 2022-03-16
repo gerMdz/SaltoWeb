@@ -155,11 +155,8 @@ fabric.properties
 
 # Assets and user uploads
 /public/uploads/
-/vendor/
 
-# Assets and user uploads
-/web/bundles/
-/web/uploads/
+
 
 # PHPUnit
 /app/phpunit.xml
@@ -185,3 +182,6 @@ fabric.properties
 .idea
 /migrations/
 docker-compose.yml
+/keys/private_key.pem
+/keys/public_key.txt
+/keys/private_key.txt

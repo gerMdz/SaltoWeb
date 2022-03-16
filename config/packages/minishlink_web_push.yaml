@@ -1,6 +1,6 @@
 minishlink_web_push:
   VAPID:
-    subject: https://yoursite.com # can be an URL or a mailto:
+    subject: '%env(SUBJECT_DIR)%' # can be an URL or a mailto:
     publicKey: ~88 chars          # uncompressed public key P-256 encoded in Base64-URL
     privateKey: ~44 chars         # the secret multiplier of the private key encoded in Base64-URL
     pemFile: path/to/pem          # if you have a PEM file and can link to it on your filesystem
