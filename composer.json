@@ -12,6 +12,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.9",
         "minishlink/web-push-bundle": "^6.0",
+        "nelmio/cors-bundle": "^2.2",
         "sensio/framework-extra-bundle": "^6.1",
         "symfony/asset": "5.4.*",
         "symfony/console": "5.4.*",
@@ -34,7 +35,8 @@
         "symfony/yaml": "5.4.*",
         "symfonycasts/verify-email-bundle": "^1.5",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+      "ext-json": "*"
     },
     "config": {
         "optimize-autoloader": true,
