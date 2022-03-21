@@ -13,3 +13,9 @@ Registrando Usuarios
 3) Run "php bin/console make:migration" to generate a migration for the newly added User::isVerified property.
 
 Agregando usuarios 
+
+No ha funcionado como esperaba, pueden ser distintos motivos
+
+Aun así, y por una cuestión profesional también, la idea es migrar a nodejs y express
+
+AUnque no sé como manejar usuarios en esa plataforma.
