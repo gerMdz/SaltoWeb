@@ -26,15 +26,21 @@ class PushManagerController extends AbstractController
 
     private string $subject_push;
     private EntityManager $entityManager;
+    private string $vapid_public;
+    private string $vapid_private;
 
     /**
      * @param string $subject_push
+     * @param string $vapid_public
+     * @param string $vapid_private
      * @param EntityManager $entityManager
      */
-    public function __construct(string $subject_push, EntityManagerInterface $entityManager)
+    public function __construct(string $subject_push, string $vapid_public, string $vapid_private, EntityManagerInterface $entityManager)
     {
         $this->subject_push = $subject_push;
         $this->entityManager = $entityManager;
+        $this->vapid_public = $vapid_public;
+        $this->vapid_private = $vapid_private;
     }
 
     /**
@@ -105,12 +111,13 @@ class PushManagerController extends AbstractController
         $auth = array(
             'VAPID' => array(
                 'subject' => $this->subject_push,
-                'publicKey' => file_get_contents(__DIR__.' '.'../../../keys/public_key.txt'),
+                'publicKey' => $this->vapid_public,
                 // don't forget that your public key also lives in app.js
-                'privateKey' => file_get_contents(__DIR__.' '.'../../../keys/private_key.txt'),
+                'privateKey' => $this->vapid_private,
                 // in the real world, this would be in a secret file
             ),
         );
+
         $webPush = new WebPush($auth);
         $receptores = $subscriptionEntityRepository->findAll();
 
