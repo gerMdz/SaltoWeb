@@ -6276,16 +6276,16 @@
         },
         {
             "name": "symfony/runtime",
-            "version": "v5.4.25",
+            "version": "v5.4.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/runtime.git",
-                "reference": "03e9c5d74464213a47a2ad8dc8eb249613701d6f"
+                "reference": "242b4d773c004fa258e1b412f3f49fc2ac78353a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/runtime/zipball/03e9c5d74464213a47a2ad8dc8eb249613701d6f",
-                "reference": "03e9c5d74464213a47a2ad8dc8eb249613701d6f",
+                "url": "https://api.github.com/repos/symfony/runtime/zipball/242b4d773c004fa258e1b412f3f49fc2ac78353a",
+                "reference": "242b4d773c004fa258e1b412f3f49fc2ac78353a",
                 "shasum": ""
             },
             "require": {
@@ -6336,7 +6336,7 @@
                 "runtime"
             ],
             "support": {
-                "source": "https://github.com/symfony/runtime/tree/v5.4.25"
+                "source": "https://github.com/symfony/runtime/tree/v5.4.46"
             },
             "funding": [
                 {
@@ -6352,7 +6352,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-06-20T11:49:54+00:00"
+            "time": "2024-11-06T08:58:41+00:00"
         },
         {
             "name": "symfony/security-bundle",
